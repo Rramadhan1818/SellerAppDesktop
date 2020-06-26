@@ -1,0 +1,602 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91CC163A-A023-4017-A73F-6AD3F29A93F2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Penjualan_App</RootNamespace>
+    <AssemblyName>Penjualan-App</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assets\connector\4.5\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.EntityFramework">
+      <HintPath>..\..\..\Assets\connector\4.5\MySql.Data.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MySQL.Data.EntityFrameworkCore">
+      <HintPath>..\..\..\Assets\connector\4.5\MySQL.Data.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assets\connector\4.5\MySql.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MyClass\Koneksi.cs" />
+    <Compile Include="MyForm\FormBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormBarang.Designer.cs">
+      <DependentUpon>FormBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FormDialogBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormDialogBarang.Designer.cs">
+      <DependentUpon>FormDialogBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FormDialogPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormDialogPelanggan.Designer.cs">
+      <DependentUpon>FormDialogPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FormPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormPelanggan.Designer.cs">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FormTransaksi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormTransaksi.Designer.cs">
+      <DependentUpon>FormTransaksi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyForm\FormUtama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MyForm\FormUtama.Designer.cs">
+      <DependentUpon>FormUtama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MyForm\FormBarang.resx">
+      <DependentUpon>FormBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FormDialogBarang.resx">
+      <DependentUpon>FormDialogBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FormDialogPelanggan.resx">
+      <DependentUpon>FormDialogPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FormPelanggan.resx">
+      <DependentUpon>FormPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FormTransaksi.resx">
+      <DependentUpon>FormTransaksi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyForm\FormUtama.resx">
+      <DependentUpon>FormUtama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d bar chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Anchor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apply.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bad mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Component.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Create.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cut.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delivery.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Disaster.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Eject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\E-mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Erase.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Euro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fast-forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Favourites.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Female.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\First.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forbidden.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free bsd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Go back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Go forward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Go.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Good-mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Green tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Heart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help book 3d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\How-to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hungup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Last recor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Last.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Left-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lightning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Linux.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\List.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Load.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Low rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Male.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Medium rating.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Message.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mobile-phone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Movie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New document.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No-entry.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Paste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\People.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Phone number.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pie chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pinion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Playback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Play-music.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Previous.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Problem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Raise.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Record.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red mark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Redo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Repair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Retort.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Shopping cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sound.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sync.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Table.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Target.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Taxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Terminate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Text.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thumbs down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thumbs up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turn off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\View.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wrench.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyReport\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ecommerce-start.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bck-shop.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
